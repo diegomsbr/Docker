@@ -1,0 +1,15 @@
+# To completely uninstall Docker:
+
+Step 1 - To identify what installed package you have
+dpkg -l | grep -i docker
+
+Step 2 - Unistall Docker
+sudo apt-get purge -y docker-engine docker docker.io docker-ce  
+sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce  
+
+Step 3 - If you wish to delete all images, containers, and volumes run the following commands
+
+sudo rm -rf /var/lib/docker /etc/docker
+sudo rm /etc/apparmor.d/docker
+sudo groupdel docker
+sudo rm -rf /var/run/docker.sock

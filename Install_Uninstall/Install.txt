@@ -1,0 +1,61 @@
+# Full information at https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+
+# Install using the repository 
+
+1 - Update the apt package index:
+
+sudo apt-get update
+
+2 - Install packages to allow apt to use a repository over HTTPS:
+
+sudo apt-get install apt-transport-https 
+sudo apt-get install ca-certificates 
+sudo apt-get install curl
+sudo apt-get install gnupg-agent 
+sudo apt-get install software-properties-common
+
+
+3 - Add Docker’s official GPG key:
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+To see the fingerprint, do the following:
+
+sudo apt-key finger
+
+pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ desconhecida] Docker Release (CE deb) <docker@docker.com>
+sub   rsa4096 2017-02-22 [S]
+
+To see the fingerprint knowing the entire key (Notice that we only need the eight final digits)
+
+sudo apt-key fingerprint 0EBFCD88
+
+# To add repository (always use the stable)
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+
+# To install the Docker
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Install quickly 
+
+
